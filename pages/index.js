@@ -1,11 +1,5 @@
-import { Inter } from 'next/font/google';
-
-const inter = Inter({ subsets: ['latin'] });
+import Layout from '../components/Layout';
 
 export default function Home() {
-  return (
-    <div>
-      <h1 className="text-3xl font-bold">Lowkey Shop</h1>
-    </div>
-  );
+  return <Layout title="Home">Lowkey Shop</Layout>;
 }
