@@ -34,7 +34,6 @@ export default function Navbar() {
         <NavItem icon={<UserIcon />}>
           <DropDownMenu />
         </NavItem>
-        <NavItem icon={<ArrowRightOnRectangleIcon />} />
 
         <Link href="/cart" className="p-2">
           Cart
@@ -53,9 +52,9 @@ function NavItem(props) {
   const [open, setOpen] = useState();
   return (
     <li className="nav-item">
-      <a href="#" className="icon-button" onClick={() => setOpen(!open)}>
+      <div className="icon-button" onClick={() => setOpen(!open)}>
         {props.icon}
-      </a>
+      </div>
       {open && props.children}
     </li>
   );
@@ -65,6 +64,7 @@ function DropDownMenu() {
   const [activeMenu, setActiveMenu] = useState('main');
   const [menuHeight, setMenuHeight] = useState(null);
   const dropdownRef = useRef(null);
+
   const { status, data: session } = useSession();
   const { dispatch } = useContext(Store);
 
@@ -81,15 +81,14 @@ function DropDownMenu() {
 
   function DropDownItem(props) {
     return (
-      <a
-        href="#"
+      <div
         className="menu-item"
         onClick={() => props.goToMenu && setActiveMenu(props.goToMenu)}
       >
         <span className="icon-button">{props.leftIcon}</span>
         {props.children}
         <span className="icon-right">{props.rightIcon}</span>
-      </a>
+      </div>
     );
   }
 
@@ -116,6 +115,11 @@ function DropDownMenu() {
               <p className="border-b-2 mb-2 p-2 pl-0">
                 Welcome again {session.user.name} !
               </p>
+              <Link href="/profile">
+                <DropDownItem leftIcon={<UserCircleIcon />}>
+                  My Profile
+                </DropDownItem>
+              </Link>
               <Link href="/orders">
                 <DropDownItem leftIcon={<ShoppingCartIcon />}>
                   My Orders

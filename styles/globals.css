@@ -126,7 +126,7 @@ button svg {
 }
 .dropdown {
   position: absolute;
-  top: 52px;
+  top: 44px;
   width: 300px;
   transform: translateX(-45%);
   background-color: var(--primary);
