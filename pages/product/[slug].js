@@ -35,7 +35,7 @@ export default function ProductScreen() {
           </button>
         </Link>
       </div>
-      <div className="grid md:grid-cols-4 md:gap-3">
+      <div className="mt-4 grid md:grid-cols-4 md:gap-3">
         <div className="md:col-span-2">
           <Image
             src={product.image}
@@ -45,7 +45,7 @@ export default function ProductScreen() {
             layout="responsive"
           ></Image>
         </div>
-        <div>
+        <div className="mt-6">
           <ul>
             <li>
               <h1 className="text-lg">{product.name}</h1>
