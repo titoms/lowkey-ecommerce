@@ -62,8 +62,9 @@ ul {
   padding: 0;
 }
 
-a {
-  @apply text-blue-500 hover:text-blue-700;
+a,
+a h2 {
+  @apply text-gray-300 hover:text-gray-400;
   text-decoration: none;
   transition: filter 300ms;
 }
@@ -125,7 +126,7 @@ button svg {
 }
 .dropdown {
   position: absolute;
-  top: 52px;
+  top: 44px;
   width: 300px;
   transform: translateX(-45%);
   background-color: var(--primary);
