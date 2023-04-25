@@ -30,31 +30,7 @@ function Layout({ title, children }) {
 
       <div className="flex min-h-screen flex-col justify-between">
         <header>
-          {/* <Navbar></Navbar> */}
-          <nav className="flex h-12 justify-between px-4 shadow-md items-center">
-            <Link href="/" className="text-lg font-bold">
-              Lowkey
-            </Link>
-            <div>
-              <Link href="/cart" className="p-2">
-                Cart
-                {cartItemsCount > 0 && (
-                  <span className="ml-1 rounded-full bg-red-700 px-2 py-1 text-xs font-bold text-white">
-                    {cartItemsCount}
-                  </span>
-                )}
-              </Link>
-              {status === 'loading' ? (
-                'Loading'
-              ) : session?.user ? (
-                session.user.name
-              ) : (
-                <Link href="/login" className="p-2">
-                  Login
-                </Link>
-              )}
-            </div>
-          </nav>
+          <Navbar></Navbar>
         </header>
 
         <main className="container m-auto mt-4 px-4">{children}</main>
