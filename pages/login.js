@@ -49,7 +49,7 @@ export default function LoginScreen() {
         <div className="mb-4">
           <label htmlFor="email">Email</label>
           <input
-            className="w-full"
+            className="w-full mt-2"
             {...register('email', {
               required: 'Please enter an email',
               pattern: {
@@ -68,7 +68,7 @@ export default function LoginScreen() {
         <div className="mb-4">
           <label htmlFor="password">Password</label>
           <input
-            className="w-full"
+            className="w-full mt-2"
             {...register('password', {
               required: 'Please enter password',
               minLength: {
@@ -88,7 +88,7 @@ export default function LoginScreen() {
         </div>
         <div className="mb-4">
           Don&apos;t have an account ? &nbsp;
-          <Link href="register" className="primary-button">
+          <Link href="register" className="primary-button text-black font-bold">
             Register
           </Link>
         </div>

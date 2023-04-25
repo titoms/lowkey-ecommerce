@@ -5,6 +5,7 @@ import { ToastContainer } from 'react-toastify';
 import { Store } from '@/utils/Store';
 import 'react-toastify/dist/ReactToastify.css';
 import { useSession } from 'next-auth/react';
+import Navbar from './Navbar';
 
 function Layout({ title, children }) {
   const { status, data: session } = useSession();
@@ -29,6 +30,7 @@ function Layout({ title, children }) {
 
       <div className="flex min-h-screen flex-col justify-between">
         <header>
+          {/* <Navbar></Navbar> */}
           <nav className="flex h-12 justify-between px-4 shadow-md items-center">
             <Link href="/" className="text-lg font-bold">
               Lowkey
