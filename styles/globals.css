@@ -3,12 +3,12 @@
 @tailwind utilities;
 
 :root {
-  --primary: #242526;
-  --secondary: #484a4d;
-  --secondary-hover: #3a3b3d;
-  --tertiary: #dadce1;
+  --primary: #191919;
+  --secondary: #333333;
+  --secondary-hover: #555555;
+  --tertiary: #808080;
   --nav-size: 50px;
-  --border: 1px solid #474a4d;
+  --border: 1px solid #444444;
   --border-radius: 8px;
   --speed: 500ms;
 }
@@ -48,6 +48,10 @@ body {
 
 .primary-button {
   @apply rounded bg-amber-300 mt-2 py-2 px-4 shadow outline-none hover:bg-amber-400 active:bg-amber-500;
+}
+
+.default-button {
+  @apply rounded bg-gray-500 mt-2 py-2 px-4 text-black shadow outline-none hover:bg-gray-600 active:bg-gray-800;
 }
 
 input,

@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
 import Head from 'next/head';
-import Link from 'next/link';
 import { ToastContainer } from 'react-toastify';
 import { Store } from '@/utils/Store';
 import 'react-toastify/dist/ReactToastify.css';
