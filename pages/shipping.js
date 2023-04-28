@@ -76,7 +76,6 @@ export default function ShippingScreen() {
           <input
             className="w-full mt-2"
             id="address"
-            autoFocus
             {...register('address', {
               required: 'Please enter address',
               minLength: {
@@ -95,7 +94,6 @@ export default function ShippingScreen() {
           <input
             className="w-full mt-2"
             id="city"
-            autoFocus
             {...register('city', {
               required: 'Please enter City',
             })}
@@ -110,7 +108,6 @@ export default function ShippingScreen() {
           <input
             className="w-full mt-2"
             id="zipcode"
-            autoFocus
             {...register('zipcode', {
               required: 'Please enter Zipcode',
             })}
@@ -125,7 +122,6 @@ export default function ShippingScreen() {
           <input
             className="w-full mt-2"
             id="country"
-            autoFocus
             {...register('country', {
               required: 'Please enter Country',
             })}
