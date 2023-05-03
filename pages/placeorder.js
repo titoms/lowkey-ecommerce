@@ -162,7 +162,7 @@ export default function PlaceOrderScreen() {
                 </li>
                 <li>
                   <button
-                    display={loading.toString()}
+                    disabled={loading}
                     onClick={placeOrderHandler}
                     className="primary-button w-full"
                   >

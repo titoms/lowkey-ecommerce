@@ -1,14 +1,15 @@
-import Layout from '@/components/Layout';
 import Link from 'next/link';
 import React, { useEffect } from 'react';
 import { signIn, useSession } from 'next-auth/react';
 import { useForm } from 'react-hook-form';
-import { getError } from '@/utils/error';
+import Layout from '../components/Layout';
+import { getError } from '../utils/error';
 import { toast } from 'react-toastify';
 import { useRouter } from 'next/router';
 
 export default function LoginScreen() {
   const { data: session } = useSession();
+
   const router = useRouter();
   const { redirect } = router.query;
 
@@ -23,7 +24,6 @@ export default function LoginScreen() {
     register,
     formState: { errors },
   } = useForm();
-
   const submitHandler = async ({ email, password }) => {
     try {
       const result = await signIn('credentials', {
@@ -38,7 +38,6 @@ export default function LoginScreen() {
       toast.error(getError(err));
     }
   };
-
   return (
     <Layout title="Login">
       <form
@@ -49,16 +48,16 @@ export default function LoginScreen() {
         <div className="mb-4">
           <label htmlFor="email">Email</label>
           <input
-            className="w-full mt-2"
+            type="email"
             {...register('email', {
-              required: 'Please enter an email',
+              required: 'Please enter email',
               pattern: {
                 value: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$/i,
-                message: 'Please enter a valid email',
+                message: 'Please enter valid email',
               },
             })}
+            className="w-full"
             id="email"
-            type="email"
             autoFocus
           ></input>
           {errors.email && (
@@ -68,29 +67,25 @@ export default function LoginScreen() {
         <div className="mb-4">
           <label htmlFor="password">Password</label>
           <input
-            className="w-full mt-2"
+            type="password"
             {...register('password', {
               required: 'Please enter password',
-              minLength: {
-                value: 3,
-                message: 'Password has to be more than 3 characters long',
-              },
+              minLength: { value: 6, message: 'password is more than 5 chars' },
             })}
+            className="w-full"
             id="password"
-            type="password"
+            autoFocus
           ></input>
           {errors.password && (
-            <div className="text-red-500">{errors.password.message}</div>
+            <div className="text-red-500 ">{errors.password.message}</div>
           )}
         </div>
-        <div className="mb-4">
+        <div className="mb-4 ">
           <button className="primary-button">Login</button>
         </div>
-        <div className="mb-4">
-          Don&apos;t have an account ? &nbsp;
-          <Link href="register" className="primary-button text-black font-bold">
-            Register
-          </Link>
+        <div className="mb-4 ">
+          Don&apos;t have an account? &nbsp;
+          <Link href="register">Register</Link>
         </div>
       </form>
     </Layout>
